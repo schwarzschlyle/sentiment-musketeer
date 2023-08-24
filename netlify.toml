@@ -1,8 +1,3 @@
 [build]
-  command = "pip install -r requirements.txt && python app.py build"
-  publish = "templates"
-  functions = "netlify-functions"  # Change to the correct path
-
-
-[functions]
-  directory = "netlify-functions"  # Change to the correct path
+publish = "app"
+command = "python app/app.py"

@@ -1,0 +1,27 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Sentiment Analysis</h1>
+    <textarea id="inputText" rows="4" cols="50"></textarea>
+    <button id="analyzeBtn">Analyze Sentiment</button>
+    <p id="result"></p>
+    <script>
+        document.getElementById('analyzeBtn').addEventListener('click', async () => {
+            const text = document.getElementById('inputText').value;
+            const response = await fetch('/analyze_sentiment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text })
+            });
+            const data = await response.json();
+            document.getElementById('result').innerText = `Sentiment: ${data.sentiment}`;
+        });
+    </script>
+</body>
+</html>
