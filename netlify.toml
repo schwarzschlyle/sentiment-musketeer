@@ -5,3 +5,7 @@ functions = "netlify-functions"  # Change to the correct path
 
 [build.environment]
 FLASK_ENV = "production"
+
+
+[functions]
+  directory = "netlify-function"
