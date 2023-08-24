@@ -48,7 +48,7 @@
             event.preventDefault();
 
             const userInput = document.getElementById('text_input').value;
-            const response = await fetch('/.netlify/functions/sentiment', {
+            const response = await fetch('/netlify-functions/sentiment', {
                 method: 'POST',
                 body: JSON.stringify({ text: userInput }),
             });
