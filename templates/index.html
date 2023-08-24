@@ -20,6 +20,37 @@
 <!--</html>-->
 
 
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Sentiment Analysis Web App</title>-->
+<!--    <style>-->
+<!--        /* Your CSS styles here */-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">-->
+<!--        <h1>Sentiment Analysis Web App</h1>-->
+<!--        <form id="sentimentForm" action="/" method="POST">-->
+<!--            <label for="text_input">Enter text here:</label>-->
+<!--            <textarea name="text_input" id="text_input" cols="30" rows="5" placeholder="Type your text here"></textarea>-->
+<!--            <button type="submit">Analyze</button>-->
+<!--        </form>-->
+<!--        <p id="sentimentResult">Sentiment: </p>-->
+<!--    </div>-->
+<!--    <script>-->
+<!--        sentimentForm.addEventListener('submit', async (event) => {-->
+
+<!--    </script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +79,7 @@
             event.preventDefault();
 
             const userInput = document.getElementById('text_input').value;
-            const response = await fetch('/netlify-functions/sentiment', {
+            const response = await fetch('/.netlify/functions/sentiment', {
                 method: 'POST',
                 body: JSON.stringify({ text: userInput }),
             });
