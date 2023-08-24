@@ -1,7 +1,7 @@
 [build]
 command = "pip install -r requirements.txt && python app.py build"
-publish = "templates"  # Assuming templates/ is the directory where your index.html resides
-functions = "lambda"  # If you have serverless functions
+publish = "templates"
+functions = "netlify-functions"  # Change to the correct path
 
 [build.environment]
 FLASK_ENV = "production"

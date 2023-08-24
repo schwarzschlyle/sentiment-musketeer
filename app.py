@@ -11,12 +11,12 @@ nltk.download('vader_lexicon')
 
 
 # @app.route("/", methods=["GET", "POST"])
-# def index():
-#     if request.method == "POST":
-#         user_input = request.form["text_input"]
-#         sentiment = perform_sentiment_analysis(user_input)
-#         return render_template("index.html", sentiment=sentiment)
-#     return render_template("index.html")
+# # def index():
+# #     if request.method == "POST":
+# #         user_input = request.form["text_input"]
+# #         sentiment = perform_sentiment_analysis(user_input)
+# #         return render_template("index.html", sentiment=sentiment)
+# #     return render_template("index.html")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
