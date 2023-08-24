@@ -85,7 +85,8 @@ const axios = require('axios');
 exports.handler = async function (event, context) {
   try {
     const userInput = JSON.parse(event.body).text;
-    const response = await performSentimentAnalysis(userInput);
+    const functionUrl = process.env.NETLIFY_FUNCTION_URL; // Fetch the function URL from environment
+    const response = await performSentimentAnalysis(userInput, functionUrl);
     return {
       statusCode: 200,
       body: JSON.stringify({ sentiment: response.data.sentiment }),
@@ -98,9 +99,10 @@ exports.handler = async function (event, context) {
   }
 };
 
-async function performSentimentAnalysis(text) {
-  const apiUrl = 'YOUR_FLASK_APP_URL'; // Replace with your Flask app's URL
-  const response = await axios.post(apiUrl, { text });
+async function performSentimentAnalysis(text, functionUrl) {
+  const response = await axios.post(functionUrl, { text });
   return response;
+}
+
 }
 
