@@ -1,11 +1,10 @@
 [build]
-command = "pip install -r requirements.txt && python app.py build"
-publish = "templates"
-functions = "netlify-functions"  # Change to the correct path
+  command = "pip install -r requirements.txt && python app.py build"
+  publish = "templates"
+  functions = "netlify-functions"  # Change to the correct path
 
 [build.environment]
-FLASK_ENV = "production"
-
+  FLASK_ENV = "production"
 
 [functions]
-  directory = "netlify-function"
+  directory = "netlify-functions"  # Change to the correct path
