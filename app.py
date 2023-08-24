@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+import sys
 
 app = Flask(__name__)
 
@@ -33,4 +34,9 @@ def perform_sentiment_analysis(text):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    if len(sys.argv) > 1 and sys.argv[1] == "analyze":
+        text = sys.argv[2]
+        sentiment = perform_sentiment_analysis(text)
+        print(sentiment)
+    else:
+        app.run(debug=True)
